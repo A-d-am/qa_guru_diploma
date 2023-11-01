@@ -10,7 +10,7 @@ def check_status_code(expected_code, response):
             f'Пришел неверный статус код: ожидался {expected_code}, пришел {response.status_code}'
 
 
-def check_response_json_schema(expected_schema, response):
+def validate_response_json(response, expected_schema):
     with allure.step('Проверяем содержание response.json'):
         try:
             jsonschema.validate(response.json(), expected_schema)
