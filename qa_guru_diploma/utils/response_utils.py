@@ -4,10 +4,11 @@ from allure_commons.types import AttachmentType
 import allure
 
 
-def check_status_code(expected_code, response):
-    with allure.step(f'Проверяем, что пришел status code = {expected_code}'):
-        assert response.status_code == expected_code, \
-            f'Пришел неверный статус код: ожидался {expected_code}, пришел {response.status_code}'
+def check_status_code(response_status_code, expected_status_code):
+    with allure.step(f'Проверяем, что пришел status code = {expected_status_code}'):
+        assert response_status_code == expected_status_code, (f'Wrong response status code: '
+                                                              f'expected status code = {expected_status_code}, '
+                                                              f'got {response_status_code}')
 
 
 def validate_response_json(response, expected_schema):
