@@ -1,6 +1,9 @@
+import allure
+import json
 from qa_guru_diploma.utils.schema import load_schema
 from qa_guru_diploma.utils import response_utils
-from allure_commons.types import AttachmentType
+from allure_commons.types import AttachmentType, Severity
+from data import token
 from requests import sessions
 from curlify import to_curl
 import allure
