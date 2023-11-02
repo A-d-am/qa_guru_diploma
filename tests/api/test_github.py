@@ -19,7 +19,7 @@ def github_api(method, url, **kwargs):
     }
     with allure.step(f'Отправляем запрос {method} {url} {args if len(args) != 0 else ""} '):
         with sessions.Session() as session:
-            response = session.request(method=method, url=new_url, **kwargs)
+            response = session.request(method=method, url=new_url, headers=headers, **kwargs)
             message = to_curl(response.request)
             allure.attach(body=message.encode('utf8'), name='Curl', attachment_type=AttachmentType.TEXT,
                           extension='txt')
