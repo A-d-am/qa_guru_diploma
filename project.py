@@ -12,9 +12,12 @@ BASE_DIR = os.path.dirname(__file__)
 
 
 class Config(BaseSettings):
+    selenoid_login: str = ''
+    selenoid_password: str = ''
+    browser_version: str = ''
     test_site_lang: str = 'ru'
     base_url: str = f'https://my.litefinance.vn/{test_site_lang}'
-    context: Literal['local_emulator', 'local_real', 'bstack', 'web'] = 'local_emulator'
+    context: Literal['local_emulator', 'local_real', 'bstack', 'web'] = 'web'
     driver_remote_url: str = ''
     bstack_userName: str = ''
     bstack_accessKey: str = ''
@@ -50,6 +53,12 @@ class Config(BaseSettings):
             'userName': self.bstack_userName,
             'accessKey': self.bstack_accessKey
         }
+
+    def get_selenoid_link(self):
+        load_dotenv(utils.file.relative_from_root('.env.selenoid_credentials'))
+        self.selenoid_login = os.getenv('selenoid_login')
+        self.selenoid_password = os.getenv('selenoid_password')
+        return f"https://{self.selenoid_login}:{self.selenoid_password}@selenoid.autotests.cloud/wd/hub"
 
     def is_bstack_run(self, platform):
         if platform == 'android':
@@ -111,9 +120,16 @@ class Config(BaseSettings):
                         },
                     }
                 )
-
         elif platform_name == 'web':
-            options = webdriver.ChromeOptions()
-            options.add_argument('--headless')
+            options = Options()
+            selenoid_capabilities = {
+                "browserName": "chrome",
+                "browserVersion": self.browser_version,
+                "selenoid:options": {
+                    "enableVNC": True,
+                    "enableVideo": True
+                }
+            }
+            options.capabilities.update(selenoid_capabilities)
 
         return options
