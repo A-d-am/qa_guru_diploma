@@ -1,20 +1,36 @@
-from allure_commons._allure import step
-from appium.webdriver.common.appiumby import AppiumBy
-from selene import browser, have
-from tests.conftest import ios
+import allure
+import pytest
+from allure_commons.types import Severity
+from tests import conftest
+from qa_guru_diploma.application import app
+from tests.conftest import project_config
 
 
-@ios
-def test_sample_ios_app():
+@allure.tag("ios")
+@allure.severity(Severity.NORMAL)
+@allure.label("owner", "suprun")
+@allure.epic("Mobile тесты")
+@allure.feature("Sample app iOS")
+@allure.story(f"Проверяем, что в Text Output отображается введенный в Text Input текст")
+@conftest.ios
+@pytest.mark.ios
+def test_text_button():
     text_to_input = 'Hello,world!'
-    with step('Click on Text button'):
-        browser.element((AppiumBy.ACCESSIBILITY_ID, "Text Button")).click()
+    app.simple_app_main_page.click_on_text_button()
+    app.simple_app_main_page.type_into_text_input_field(text_to_input)
 
-    with step(f'Type {text_to_input}'):
-        browser.element((AppiumBy.ACCESSIBILITY_ID, "Text Input")).send_keys(
-            text_to_input + "\n"
-        )
-    with step(f'Output result should have {text_to_input}'):
-        browser.element((AppiumBy.ACCESSIBILITY_ID, "Text Output")).should(
-            have.exact_text(text_to_input)
-        )
+    app.simple_app_main_page.expected_text_is_in_output(text_to_input)
+
+
+@allure.tag("ios")
+@allure.severity(Severity.NORMAL)
+@allure.label("owner", "suprun")
+@allure.epic("Mobile тесты")
+@allure.feature("Sample app iOS")
+@allure.story(f"Проверяем, что по нажатию на Alert вызывается alert")
+@conftest.ios
+@pytest.mark.ios
+def test_alert():
+    app.simple_app_main_page.click_on_alert_button()
+
+    app.simple_app_main_page.click_on_ok_button_in_alert()
