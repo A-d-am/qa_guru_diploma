@@ -6,6 +6,16 @@ from allure_commons.types import Severity
 from qa_guru_diploma.model.pages.reset_password_page import ResetPasswordPage
 import pytest
 import data
+@pytest.fixture(scope='function')
+def user():
+    user = User(
+        full_name='Surname Name',
+        email='user@domain.com',
+        phone='phone number',
+        password='password',
+        not_used_phone_number='phone number',
+    )
+    return user
 
 
 @allure.tag("web")
