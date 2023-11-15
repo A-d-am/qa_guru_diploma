@@ -11,4 +11,4 @@ class User:
     phone: str
     email: str
     password: str
-
+    not_used_phone_number: str
