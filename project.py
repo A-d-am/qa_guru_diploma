@@ -5,7 +5,7 @@ from pydantic_settings import BaseSettings
 from appium.options.android import UiAutomator2Options
 from appium.options.ios import XCUITestOptions
 from dotenv import load_dotenv
-from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selene import browser
 
 BASE_DIR = os.path.dirname(__file__)
