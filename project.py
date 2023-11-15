@@ -46,7 +46,7 @@ class Config(BaseSettings):
 
     @property
     def bstack_credentials(self):
-        load_dotenv(utils.file.relative_from_root('.env.credentials'))
+        load_dotenv(utils.file.relative_from_root('.env.bstack_credentials'))
         self.bstack_userName = os.getenv('bstack_userName')
         self.bstack_accessKey = os.getenv('bstack_accessKey')
         return {
