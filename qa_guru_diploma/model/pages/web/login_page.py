@@ -21,11 +21,11 @@ class LoginPage:
 
     def go_to_registration(self):
         with allure.step('Нажимаем на гиперссылку "Регистрация"'):
-            browser.element(f'[href="/{config.test_site_lang}/registration/popup"]').click()
+            browser.element(f'[href="/{project_config.test_site_lang}/registration/popup"]').click()
 
     def open_reset_password_popup(self):
         with allure.step('Нажимаем на гиперссылку "Забыли пароль?"'):
-            browser.element(f'[href="/{config.test_site_lang}/reset-password"]').click()
+            browser.element(f'[href="/{project_config.test_site_lang}/reset-password"]').click()
 
     def login_user(self, user: User):
         self.type_login(user.email)
