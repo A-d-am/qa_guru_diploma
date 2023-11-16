@@ -1,7 +1,7 @@
-from selene import browser, have, be, by
-import config
+from selene import browser, have, be
 import allure
 from qa_guru_diploma.data.user import User
+from tests.conftest import project_config
 
 
 # noinspection PyMethodMayBeStatic
