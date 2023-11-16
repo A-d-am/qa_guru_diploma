@@ -2,15 +2,16 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
-    "message": {
-      "type": "string"
+    "id": {
+      "type": "integer"
     },
-    "documentation_url": {
+    "token": {
       "type": "string"
     }
   },
   "required": [
-    "message",
-    "documentation_url"
-  ]
+    "id",
+    "token"
+  ],
+    "additionalProperty": false
 }
