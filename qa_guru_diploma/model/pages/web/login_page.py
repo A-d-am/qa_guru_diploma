@@ -54,9 +54,3 @@ class LoginPage:
         with allure.step('Проверяем, что упала ошибка неверного логина или пароля'):
             assert field_error_message.should(
                 have.text('НЕВЕРНЫЙ ЛОГИН ИЛИ ПАРОЛЬ')), 'Wrong "invalid login or password" error'
-
-    def should_be_opened(self):
-        exp_url = '?openPopup=%2Fru%2Flogin%2Fpopup'
-        with allure.step('Проверяем, что открыта страница логина'):
-            assert exp_url in browser.driver.current_url, (f'Wrong url opened: '
-                                                           f'expected {exp_url}, got {browser.driver.current_url}')
