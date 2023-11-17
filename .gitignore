@@ -162,3 +162,5 @@ cython_debug/
 tests/**/allure-results/
 .run
 data.py
+.env.bstack_credentials
+.env.selenoid_credentials
