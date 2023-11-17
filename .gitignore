@@ -160,5 +160,5 @@ cython_debug/
 .idea/
 
 tests/**/allure-results/
-
+.run
 data.py
