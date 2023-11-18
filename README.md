@@ -4,9 +4,9 @@
 
 ## Навигация
 
-1. [Автотесты на UI](./docs/ui_module.md)
-2. [Автотесты на API](./docs/test_scenarios.md)
-3. [Автотесты на Mobile](./docs/environment_setup.md)
+1. [Автотесты на UI](tests/ui/ui_tests.md)
+2. [Автотесты на API](tests/api/api_tests.md)
+3. [Автотесты на Mobile](tests/mobile/mobile_tests.md)
 
 
 ## Связь
