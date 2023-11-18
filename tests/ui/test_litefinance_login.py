@@ -43,7 +43,7 @@ def test_success_login_with_email(user):
 @allure.tag("web")
 @allure.severity(Severity.CRITICAL)
 @allure.label("owner", "suprun")
-@allure.epic("Логин пользователя")
+@allure.epic("Web UI тесты")
 @allure.feature("Позитивные проверки логина")
 @allure.story("Юзер может залогиниться с помощью телефона")
 @pytest.mark.skip(reason='Нет возможности указать реальный аккаунт(NDA)')
@@ -61,7 +61,7 @@ def test_success_login_with_phone(user):
 @allure.tag("web")
 @allure.severity(Severity.NORMAL)
 @allure.label("owner", "suprun")
-@allure.epic("Логин пользователя")
+@allure.epic("Web UI тесты")
 @allure.feature("Ошибки")
 @allure.story(
     "Падают ошибки пустых полей (логина и пароля) по нажатию на кнопку 'Войти' с пустыми полями логина и пароля ")
@@ -78,7 +78,7 @@ def test_login_popup_empty_fields_errors():
 @allure.tag("web")
 @allure.severity(Severity.NORMAL)
 @allure.label("owner", "suprun")
-@allure.epic("Логин пользователя")
+@allure.epic("Web UI тесты")
 @allure.feature("Ошибки")
 @allure.story("Падает ошибка пустого поля логина по нажатию на кнопку 'Войти' с пустым логином")
 @conftest.web
@@ -94,7 +94,7 @@ def test_login_popup_empty_login_field_error():
 @allure.tag("web")
 @allure.severity(Severity.NORMAL)
 @allure.label("owner", "suprun")
-@allure.epic("Логин пользователя")
+@allure.epic("Web UI тесты")
 @allure.feature("Ошибки")
 @allure.story("Падает ошибка пустого поля логина по нажатию на кнопку 'Войти' с пустым логином")
 @conftest.web
@@ -110,7 +110,7 @@ def test_login_popup_empty_password_field_error():
 @allure.tag("web")
 @allure.severity(Severity.NORMAL)
 @allure.label("owner", "suprun")
-@allure.epic("Логин пользователя")
+@allure.epic("Web UI тесты")
 @allure.feature("Ошибки")
 @allure.story("Падает ошибка 'Неверный логин или пароль' по нажатию на кнопку 'Войти' с неправильным паролем")
 @conftest.web
@@ -127,7 +127,7 @@ def test_login_popup_wrong_password_error(user):
 @allure.tag("web")
 @allure.severity(Severity.NORMAL)
 @allure.label("owner", "suprun")
-@allure.epic("Логин пользователя")
+@allure.epic("Web UI тесты")
 @allure.feature("Ошибки")
 @allure.story(
     "Падает ошибка 'Неверный логин или пароль' по нажатию на кнопку 'Войти' с незарегистрированным логином (почта)")
@@ -145,7 +145,7 @@ def test_login_popup_not_registered_login_error_email(user):
 @allure.tag("web")
 @allure.severity(Severity.NORMAL)
 @allure.label("owner", "suprun")
-@allure.epic("Логин пользователя")
+@allure.epic("Web UI тесты")
 @allure.feature("Ошибки")
 @allure.story(
     "Падает ошибка 'Неверный логин или пароль' по нажатию на кнопку 'Войти' с незарегистрированным логином (телефон)")
@@ -164,7 +164,7 @@ def test_login_popup_not_registered_login_error_phone(user):
 @allure.tag("web")
 @allure.severity(Severity.CRITICAL)
 @allure.label("owner", "suprun")
-@allure.epic("Логин пользователя")
+@allure.epic("Web UI тесты")
 @allure.feature("Позитивные проверки логина")
 @allure.story("Юзер может перейти в попап регистрации из логина")
 @conftest.web
@@ -184,7 +184,7 @@ def test_open_registration_tab_from_login_popup():
 @allure.tag("web")
 @allure.severity(Severity.CRITICAL)
 @allure.label("owner", "suprun")
-@allure.epic("Логин пользователя")
+@allure.epic("Web UI тесты")
 @allure.feature("Сброс пароля")
 @allure.story("Юзер может перейти в попап сброса пароля")
 @conftest.web
@@ -204,7 +204,7 @@ def test_opens_reset_password_tab_from_login_popup():
 @allure.tag("web")
 @allure.severity(Severity.CRITICAL)
 @allure.label("owner", "suprun")
-@allure.epic("Логин пользователя")
+@allure.epic("Web UI тесты")
 @allure.feature("Сброс пароля")
 @allure.story("Юзер может сбросить пароль (используя почту)")
 @pytest.mark.skip(reason='Нет доступа к методу получения кода подтверждения (NDA)')
