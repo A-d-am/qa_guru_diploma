@@ -50,7 +50,10 @@ def driver_management(request):
     if project_config.context in ['bstack', 'local_emulator', 'local_real']:
         allure_utils.attach_mobile_page_source(browser)
 
-    session_id = browser.driver.session_id
+    if project_config.context != 'api':
+        session_id = browser.driver.session_id
+    else:
+        session_id = ''
 
     with allure.step('tear down app session with id: ' + session_id):
         browser.quit()
