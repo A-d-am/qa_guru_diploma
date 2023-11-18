@@ -17,7 +17,7 @@ class Config(BaseSettings):
     browser_version: str = ''
     test_site_lang: str = 'ru'
     base_url: str = f'https://my.litefinance.vn/{test_site_lang}'
-    context: Literal['local_emulator', 'local_real', 'bstack', 'web'] = 'web'
+    context: Literal['local_emulator', 'local_real', 'bstack', 'web', ' '] = 'web'
     driver_remote_url: str = ''
     bstack_userName: str = ''
     bstack_accessKey: str = ''
