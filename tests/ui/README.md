@@ -18,7 +18,6 @@
   <code><img src="images/logo/Allure_new.png" width="40" height="40"  alt="A-d-am" title="Allure Report"></code>
   <code><img src="images/logo/allure_testops.png" width="40" height="40"  alt="A-d-am" title="Allure TestOps"></code>
   <code><img src="images/logo/Telegram.svg" width="40" height="40"  alt="A-d-am" title="Telegram Bot"></code>
-  <code><img src="images/logo/Jira.svg" width="40" height="40"  alt="A-d-am" title="Jira"></code>
 </p>
 
 ## Покрываемый функционал
