@@ -37,7 +37,8 @@ def driver_management(request):
         browser.config.driver = driver
 
     elif request.param == 'api':
-        pass
+        with allure.step('Start api test'):
+            pass
 
     yield
 
@@ -55,8 +56,9 @@ def driver_management(request):
     else:
         session_id = ''
 
-    with allure.step('tear down app session with id: ' + session_id):
-        browser.quit()
+    if project_config.context != 'api':
+        with allure.step('tear down app session with id: ' + session_id):
+            browser.quit()
 
     if project_config.context == 'bstack':
         allure_utils.attach_bstack_video(session_id, project_config.bstack_userName,
