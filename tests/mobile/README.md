@@ -89,8 +89,7 @@ allure serve allure-results
 <img src="images/screenshots/tg_android_allure.png">
 
 ### При запуске тестов в BrowserStack в Allure отчет добавляется видеозапись теста
-<video src="images/videos/browserstack_video_example.gif">Пример запуска теста
-
+![Watch the video](images/videos/browserstack_video_example.gif)
 ### По [ссылке](https://drive.google.com/file/d/1vJbZYOEBn86o7w8Ig0QB2DM3DWgwA4yH/view?usp=sharing) можно посмотреть видео запуска тестов android приложения на реальном девайсе, эмуляторе и в Browserstack 
 
 
