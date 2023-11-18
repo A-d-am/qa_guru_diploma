@@ -51,6 +51,8 @@ context=web pytest -m web
  - Выбрать необходимые значения параметров TESTS_TYPE и CONTEXT согласно инструкции 
  - Нажать на Build
 
+<img src="images/screenshots/Jenkins_build.png">
+
 ## Отчет о прохождении тестов (Allure)
 ### Локально
 Для получения отчета нужно ввести команду 
