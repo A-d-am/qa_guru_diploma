@@ -6,7 +6,6 @@ from appium.options.android import UiAutomator2Options
 from appium.options.ios import XCUITestOptions
 from dotenv import load_dotenv
 from selenium.webdriver.chrome.options import Options
-from selene import browser
 
 BASE_DIR = os.path.dirname(__file__)
 
@@ -17,7 +16,7 @@ class Config(BaseSettings):
     browser_version: str = ''
     test_site_lang: str = 'ru'
     base_url: str = f'https://my.litefinance.vn/{test_site_lang}'
-    context: Literal['local_emulator', 'local_real', 'bstack', 'web', ' '] = 'web'
+    context: Literal['local_emulator', 'local_real', 'bstack', 'web', 'api'] = 'web'
     driver_remote_url: str = ''
     bstack_userName: str = ''
     bstack_accessKey: str = ''
