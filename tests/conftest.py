@@ -8,7 +8,8 @@ from qa_guru_diploma import utils
 from qa_guru_diploma.utils import allure_utils
 import project
 
-project_config = project.Config(_env_file=utils.file.relative_from_root(f'.env.{project.Config().context}'))
+project_config = project.Config(_env_file=utils.file.relative_from_root(
+    f'.env.{project.Config().context}') if project.Config().context != 'api' else '')
 
 
 @pytest.fixture(scope='function', autouse=True)
