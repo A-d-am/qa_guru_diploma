@@ -17,6 +17,7 @@ from tests.conftest import project_config
 def test_text_button():
     text_to_input = 'Hello,world!'
     app.simple_app_main_page.click_on_text_button()
+    app.simple_app_main_page.click_on_text_input_field()
     app.simple_app_main_page.type_into_text_input_field(text_to_input)
 
     app.simple_app_main_page.expected_text_is_in_output(text_to_input)

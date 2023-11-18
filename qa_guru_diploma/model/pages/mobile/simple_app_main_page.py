@@ -10,6 +10,10 @@ class SimpleAppMainPage:
         with allure.step('Нажимаем на Text button'):
             browser.element((AppiumBy.ACCESSIBILITY_ID, "Text Button")).click()
 
+    def click_on_text_input_field(self):
+        with allure.step('Нажимаем на поле ввода'):
+            browser.element((AppiumBy.ACCESSIBILITY_ID,"Text Input")).click()
+
     def type_into_text_input_field(self, value):
         with allure.step(f'Вводим в Text Input текст: {value}'):
             browser.element((AppiumBy.ACCESSIBILITY_ID, "Text Input")).send_keys(
